@@ -106,7 +106,6 @@ function! TermbaseColorscheme(name, t0, t1, t2, t3, t4, t5, t6, t7, t8, t9, tA, 
     call TermbaseHighlight("Todo",         a:tA, a:t1, "")
     call TermbaseHighlight("Type",         a:tA, "",   "none")
     call TermbaseHighlight("Typedef",      a:tA, "",   "")
-
     " C highlighting
     call TermbaseHighlight("cOperator",  a:tC, "", "")
     call TermbaseHighlight("cPreCondit", a:tE, "", "")
