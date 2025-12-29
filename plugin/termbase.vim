@@ -3,22 +3,22 @@ if exists("g:loaded_termbase")
 endif
 let g:loaded_termbase = 1
 
-let g:tb16_0 = 0
-let g:tb16_1 = 0
-let g:tb16_2 = 0
-let g:tb16_3 = 0
-let g:tb16_4 = 0
-let g:tb16_5 = 0
-let g:tb16_6 = 0
-let g:tb16_7 = 0
-let g:tb16_8 = 0
-let g:tb16_9 = 0
-let g:tb16_A = 0
-let g:tb16_B = 0
-let g:tb16_C = 0
-let g:tb16_D = 0
-let g:tb16_E = 0
-let g:tb16_F = 0
+let g:tb16_0 = 0  " default background
+let g:tb16_1 = 10 " light background (status bar)
+let g:tb16_2 = 11 " selection background
+let g:tb16_3 = 8  " comments, invisibles
+let g:tb16_4 = 12 " dark foreground (status bar)
+let g:tb16_5 = 7  " default foreground
+let g:tb16_6 = 13 " rare foreground
+let g:tb16_7 = 15 " rare background
+let g:tb16_8 = 1  " variables
+let g:tb16_9 = 9  " literals
+let g:tb16_A = 3  " classes
+let g:tb16_B = 2  " strings
+let g:tb16_C = 6  " escapes
+let g:tb16_D = 4  " functions
+let g:tb16_E = 5  " keywords
+let g:tb16_F = 14 " delimiters
 
 function! TermbaseCycleNext()
     let l:colors = getcompletion('', 'color')
