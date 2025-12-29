@@ -263,3 +263,30 @@ function! TermbaseApply(name = "")
     " Java highlighting
     call TermbaseHighlight("javaOperator", g:tb16_D, "", "")
 endfunction
+
+function! TermbaseClearANSIColors()
+    if exists('w:termbase_matches')
+        for l:id in w:termbase_matches
+            call matchdelete(l:id)
+        endfor
+        unlet w:termbase_matches
+    endif
+endfunction
+
+function! TermbaseHighlightANSIColors()
+    call TermbaseClearANSIColors()
+    let w:termbase_matches = []
+    for l:code in range(256)
+        let l:group = 'TermbaseColor' . l:code
+        let l:bg = (!l:code || l:code == 16 || (l:code > 231 && l:code < 235)) ? 15 : "none"
+        execute 'highlight ' . l:group . ' ctermfg=' . l:code . ' ctermbg=' . l:bg
+        let l:pattern = '\<'.l:code.'\>'
+        call add(w:termbase_matches, matchadd(l:group, l:pattern, 100))
+    endfor
+endfunction
+
+augroup termbase_highlight_ansi_colors
+    autocmd!
+    autocmd BufWinEnter */colors/termbase16-*.vim call TermbaseHighlightANSIColors()
+    autocmd BufWinLeave */colors/termbase16-*.vim call TermbaseClearANSIColors()
+augroup END
