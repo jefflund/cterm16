@@ -176,6 +176,11 @@ function! TermbaseColorscheme(name, t0, t1, t2, t3, t4, t5, t6, t7, t8, t9, tA, 
     call TermbaseHighlight("jsGlobalNodeObjects", a:tA, "", "")
     call TermbaseHighlight("jsExceptions",        a:tA, "", "")
     call TermbaseHighlight("jsBuiltins",          a:tA, "", "")
+    " LSP highlighting
+    call TermbaseHighlight("LspDiagnosticsDefaultError",       a:t8, "", "")
+    call TermbaseHighlight("LspDiagnosticsDefaultWarning",     a:t9, "", "")
+    call TermbaseHighlight("LspDiagnosticsDefaultInformation", a:t5, "", "")
+    call TermbaseHighlight("LspDiagnosticsDefaultHint",        a:t3, "", "")
     " Mail highlighting
     call TermbaseHighlight("mailQuoted1", a:tA, "", "")
     call TermbaseHighlight("mailQuoted2", a:tB, "", "")
