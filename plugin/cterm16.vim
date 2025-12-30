@@ -287,6 +287,6 @@ endfunction
 
 augroup cterm16_highlight_ansi_colors
     autocmd!
-    autocmd BufWinEnter */colors/cterm1616-*.vim call CTerm16HighlightANSIColors()
-    autocmd BufWinLeave */colors/cterm1616-*.vim call CTerm16ClearANSIColors()
+    autocmd BufWinEnter */colors/cterm16-*.vim call CTerm16HighlightANSIColors()
+    autocmd BufWinLeave */colors/cterm16-*.vim call CTerm16ClearANSIColors()
 augroup END
