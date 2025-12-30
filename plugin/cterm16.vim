@@ -278,8 +278,7 @@ function! CTerm16HighlightANSIColors()
     let w:cterm16_matches = []
     for l:code in range(256)
         let l:group = 'CTerm16Color' . l:code
-        let l:bg = (!l:code || l:code == 16 || (l:code > 231 && l:code < 235)) ? 15 : "none"
-        execute 'highlight ' . l:group . ' ctermfg=' . l:code . ' ctermbg=' . l:bg
+        execute 'highlight ' . l:group . ' ctermfg=' . l:code . ' ctermbg=none'
         let l:pattern = '\<'.l:code.'\>'
         call add(w:cterm16_matches, matchadd(l:group, l:pattern, 100))
     endfor
