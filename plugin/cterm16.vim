@@ -50,7 +50,7 @@ function! CTerm16Apply(name = "")
     highlight clear
     syntax reset
     if a:name != ""
-        let g:colors_name="cterm1616-" . a:name
+        let g:colors_name="cterm16-" . a:name
     endif
     " Vim editor colors
     call CTerm16Highlight("Normal",       g:ct16_5, g:ct16_0, "")
