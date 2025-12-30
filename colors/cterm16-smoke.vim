@@ -17,4 +17,4 @@ let g:ct16_C = 231
 let g:ct16_D = 250
 let g:ct16_E = 252
 let g:ct16_F = 254
-call CTerm16Apply("grayscale")
+call CTerm16Apply("smoke")
