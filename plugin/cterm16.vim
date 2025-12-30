@@ -3,22 +3,22 @@ if exists("g:loaded_cterm16")
 endif
 let g:loaded_cterm16 = 1
 
-let g:ct16_0 = 0  " default background
-let g:ct16_1 = 10 " light background (status bar)
-let g:ct16_2 = 11 " selection background
-let g:ct16_3 = 8  " comments, invisibles
-let g:ct16_4 = 12 " dark foreground (status bar)
-let g:ct16_5 = 7  " default foreground
-let g:ct16_6 = 13 " rare foreground
-let g:ct16_7 = 15 " rare background
-let g:ct16_8 = 1  " variables
-let g:ct16_9 = 9  " literals
-let g:ct16_A = 3  " classes
-let g:ct16_B = 2  " strings
-let g:ct16_C = 6  " escapes
-let g:ct16_D = 4  " functions
-let g:ct16_E = 5  " keywords
-let g:ct16_F = 14 " delimiters
+let g:ct16_0 = 0  " primary background
+let g:ct16_1 = 8  " secondary background (status bars, line number, fold marks)
+let g:ct16_2 = 7  " selection background
+let g:ct16_3 = 10 " comments, invisibles, line highlights
+let g:ct16_4 = 15 " secondary foreground (status bars)
+let g:ct16_5 = 7  " primary foreground, caret, delimiters, operators
+let g:ct16_6 = 11 " tertiary foreground (rarely used)
+let g:ct16_7 = 4  " tertiary background (rarely used)
+let g:ct16_8 = 9  " variables, markup lists, diff deleted
+let g:ct16_9 = 14 " integers, booleans, constants
+let g:ct16_A = 13 " classes, markup bold, search background
+let g:ct16_B = 12 " strings, inherited class, diff inserted
+let g:ct16_C = 6  " support, regex, escape characters, markup quotes
+let g:ct16_D = 2  " functions, methods, headings
+let g:ct16_E = 5  " keywords, selector, markup italic, diff changed
+let g:ct16_F = 3  " deprecated, embedding language tags
 
 function! CTerm16CycleNext()
     let l:colors = getcompletion('', 'color')
@@ -54,77 +54,77 @@ function! CTerm16Apply(name = "")
     endif
     " Vim editor colors
     call CTerm16Highlight("Normal",       g:ct16_5, g:ct16_0, "")
-    call CTerm16Highlight("Bold",         "",   "",   "bold")
-    call CTerm16Highlight("Debug",        g:ct16_8, "",   "")
-    call CTerm16Highlight("Directory",    g:ct16_D, "",   "")
+    call CTerm16Highlight("Bold",         "",       "",       "bold")
+    call CTerm16Highlight("Debug",        g:ct16_8, "",       "")
+    call CTerm16Highlight("Directory",    g:ct16_D, "",       "")
     call CTerm16Highlight("Error",        g:ct16_0, g:ct16_8, "")
     call CTerm16Highlight("ErrorMsg",     g:ct16_8, g:ct16_0, "")
-    call CTerm16Highlight("Exception",    g:ct16_8, "",   "")
+    call CTerm16Highlight("Exception",    g:ct16_8, "",       "")
     call CTerm16Highlight("FoldColumn",   g:ct16_C, g:ct16_1, "")
     call CTerm16Highlight("Folded",       g:ct16_3, g:ct16_1, "")
     call CTerm16Highlight("IncSearch",    g:ct16_1, g:ct16_9, "none")
-    call CTerm16Highlight("Italic",       "",   "",   "none")
-    call CTerm16Highlight("Macro",        g:ct16_8, "",   "")
-    call CTerm16Highlight("MatchParen",   "",   g:ct16_3, "")
-    call CTerm16Highlight("ModeMsg",      g:ct16_B, "",   "")
-    call CTerm16Highlight("MoreMsg",      g:ct16_B, "",   "")
-    call CTerm16Highlight("Question",     g:ct16_D, "",   "")
+    call CTerm16Highlight("Italic",       "",       "",       "none")
+    call CTerm16Highlight("Macro",        g:ct16_8, "",       "")
+    call CTerm16Highlight("MatchParen",   "",       g:ct16_3, "")
+    call CTerm16Highlight("ModeMsg",      g:ct16_B, "",       "")
+    call CTerm16Highlight("MoreMsg",      g:ct16_B, "",       "")
+    call CTerm16Highlight("Question",     g:ct16_D, "",       "")
     call CTerm16Highlight("Search",       g:ct16_1, g:ct16_A, "")
     call CTerm16Highlight("Substitute",   g:ct16_1, g:ct16_A, "none")
-    call CTerm16Highlight("SpecialKey",   g:ct16_3, "",   "")
-    call CTerm16Highlight("TooLong",      g:ct16_8, "",   "")
-    call CTerm16Highlight("Underlined",   g:ct16_8, "",   "")
-    call CTerm16Highlight("Visual",       "",   g:ct16_2, "")
-    call CTerm16Highlight("VisualNOS",    g:ct16_8, "",   "")
-    call CTerm16Highlight("WarningMsg",   g:ct16_8, "",   "")
-    call CTerm16Highlight("WildMenu",     g:ct16_8, "",   "")
-    call CTerm16Highlight("Title",        g:ct16_D, "",   "none")
+    call CTerm16Highlight("SpecialKey",   g:ct16_3, "",       "")
+    call CTerm16Highlight("TooLong",      g:ct16_8, "",       "")
+    call CTerm16Highlight("Underlined",   g:ct16_8, "",       "")
+    call CTerm16Highlight("Visual",       "",       g:ct16_2, "")
+    call CTerm16Highlight("VisualNOS",    g:ct16_8, "",       "")
+    call CTerm16Highlight("WarningMsg",   g:ct16_8, "",       "")
+    call CTerm16Highlight("WildMenu",     g:ct16_8, "",       "")
+    call CTerm16Highlight("Title",        g:ct16_D, "",       "none")
     call CTerm16Highlight("Conceal",      g:ct16_D, g:ct16_0, "")
     call CTerm16Highlight("Cursor",       g:ct16_0, g:ct16_5, "")
-    call CTerm16Highlight("NonText",      g:ct16_3, "",   "")
+    call CTerm16Highlight("NonText",      g:ct16_3, "",       "")
     call CTerm16Highlight("LineNr",       g:ct16_3, g:ct16_1, "")
     call CTerm16Highlight("SignColumn",   g:ct16_3, g:ct16_1, "")
     call CTerm16Highlight("StatusLine",   g:ct16_4, g:ct16_2, "none")
     call CTerm16Highlight("StatusLineNC", g:ct16_3, g:ct16_1, "none")
     call CTerm16Highlight("VertSplit",    g:ct16_2, g:ct16_2, "none")
-    call CTerm16Highlight("ColorColumn",  "",   g:ct16_1, "none")
-    call CTerm16Highlight("CursorColumn", "",   g:ct16_1, "none")
-    call CTerm16Highlight("CursorLine",   "",   g:ct16_1, "none")
+    call CTerm16Highlight("ColorColumn",  "",       g:ct16_1, "none")
+    call CTerm16Highlight("CursorColumn", "",       g:ct16_1, "none")
+    call CTerm16Highlight("CursorLine",   "",       g:ct16_1, "none")
     call CTerm16Highlight("CursorLineNr", g:ct16_4, g:ct16_1, "")
-    call CTerm16Highlight("QuickFixLine", "",   g:ct16_1, "none")
+    call CTerm16Highlight("QuickFixLine", "",       g:ct16_1, "none")
     call CTerm16Highlight("PMenu",        g:ct16_5, g:ct16_1, "none")
     call CTerm16Highlight("PMenuSel",     g:ct16_1, g:ct16_5, "")
     call CTerm16Highlight("TabLine",      g:ct16_3, g:ct16_1, "none")
     call CTerm16Highlight("TabLineFill",  g:ct16_3, g:ct16_1, "none")
     call CTerm16Highlight("TabLineSel",   g:ct16_B, g:ct16_1, "none")
     " Standard syntax highlighting
-    call CTerm16Highlight("Boolean",      g:ct16_9, "",   "")
-    call CTerm16Highlight("Character",    g:ct16_8, "",   "")
-    call CTerm16Highlight("Comment",      g:ct16_3, "",   "")
-    call CTerm16Highlight("Conditional",  g:ct16_E, "",   "")
-    call CTerm16Highlight("Constant",     g:ct16_9, "",   "")
-    call CTerm16Highlight("Define",       g:ct16_E, "",   "none")
-    call CTerm16Highlight("Delimiter",    g:ct16_F, "",   "")
-    call CTerm16Highlight("Float",        g:ct16_9, "",   "")
-    call CTerm16Highlight("Function",     g:ct16_D, "",   "")
-    call CTerm16Highlight("Identifier",   g:ct16_8, "",   "none")
-    call CTerm16Highlight("Include",      g:ct16_D, "",   "")
-    call CTerm16Highlight("Keyword",      g:ct16_E, "",   "")
-    call CTerm16Highlight("Label",        g:ct16_A, "",   "")
-    call CTerm16Highlight("Number",       g:ct16_9, "",   "")
-    call CTerm16Highlight("Operator",     g:ct16_5, "",   "none")
-    call CTerm16Highlight("PreProc",      g:ct16_A, "",   "")
-    call CTerm16Highlight("Repeat",       g:ct16_A, "",   "")
-    call CTerm16Highlight("Special",      g:ct16_C, "",   "")
-    call CTerm16Highlight("SpecialChar",  g:ct16_F, "",   "")
-    call CTerm16Highlight("Statement",    g:ct16_8, "",   "")
-    call CTerm16Highlight("StorageClass", g:ct16_A, "",   "")
-    call CTerm16Highlight("String",       g:ct16_B, "",   "")
-    call CTerm16Highlight("Structure",    g:ct16_E, "",   "")
-    call CTerm16Highlight("Tag",          g:ct16_A, "",   "")
+    call CTerm16Highlight("Boolean",      g:ct16_9, "",       "")
+    call CTerm16Highlight("Character",    g:ct16_8, "",       "")
+    call CTerm16Highlight("Comment",      g:ct16_3, "",       "")
+    call CTerm16Highlight("Conditional",  g:ct16_E, "",       "")
+    call CTerm16Highlight("Constant",     g:ct16_9, "",       "")
+    call CTerm16Highlight("Define",       g:ct16_E, "",       "none")
+    call CTerm16Highlight("Delimiter",    g:ct16_F, "",       "")
+    call CTerm16Highlight("Float",        g:ct16_9, "",       "")
+    call CTerm16Highlight("Function",     g:ct16_D, "",       "")
+    call CTerm16Highlight("Identifier",   g:ct16_8, "",       "none")
+    call CTerm16Highlight("Include",      g:ct16_D, "",       "")
+    call CTerm16Highlight("Keyword",      g:ct16_E, "",       "")
+    call CTerm16Highlight("Label",        g:ct16_A, "",       "")
+    call CTerm16Highlight("Number",       g:ct16_9, "",       "")
+    call CTerm16Highlight("Operator",     g:ct16_5, "",       "none")
+    call CTerm16Highlight("PreProc",      g:ct16_A, "",       "")
+    call CTerm16Highlight("Repeat",       g:ct16_A, "",       "")
+    call CTerm16Highlight("Special",      g:ct16_C, "",       "")
+    call CTerm16Highlight("SpecialChar",  g:ct16_F, "",       "")
+    call CTerm16Highlight("Statement",    g:ct16_8, "",       "")
+    call CTerm16Highlight("StorageClass", g:ct16_A, "",       "")
+    call CTerm16Highlight("String",       g:ct16_B, "",       "")
+    call CTerm16Highlight("Structure",    g:ct16_E, "",       "")
+    call CTerm16Highlight("Tag",          g:ct16_A, "",       "")
     call CTerm16Highlight("Todo",         g:ct16_A, g:ct16_1, "")
-    call CTerm16Highlight("Type",         g:ct16_A, "",   "none")
-    call CTerm16Highlight("Typedef",      g:ct16_A, "",   "")
+    call CTerm16Highlight("Type",         g:ct16_A, "",       "none")
+    call CTerm16Highlight("Typedef",      g:ct16_A, "",       "")
     " C highlighting
     call CTerm16Highlight("cOperator",  g:ct16_C, "", "")
     call CTerm16Highlight("cPreCondit", g:ct16_E, "", "")
@@ -210,10 +210,10 @@ function! CTerm16Apply(name = "")
     call CTerm16Highlight("mailURL",     g:ct16_D, "", "")
     call CTerm16Highlight("mailEmail",   g:ct16_D, "", "")
     " Markdown highlighting
-    call CTerm16Highlight("markdownCode",             g:ct16_B, "",   "")
+    call CTerm16Highlight("markdownCode",             g:ct16_B, "",       "")
     call CTerm16Highlight("markdownError",            g:ct16_5, g:ct16_0, "")
-    call CTerm16Highlight("markdownCodeBlock",        g:ct16_B, "",   "")
-    call CTerm16Highlight("markdownHeadingDelimiter", g:ct16_D, "",   "")
+    call CTerm16Highlight("markdownCodeBlock",        g:ct16_B, "",       "")
+    call CTerm16Highlight("markdownHeadingDelimiter", g:ct16_D, "",       "")
     " NERDTree highlighting
     call CTerm16Highlight("NERDTreeDirSlash", g:ct16_D, "", "")
     call CTerm16Highlight("NERDTreeExecFile", g:ct16_5, "", "")
