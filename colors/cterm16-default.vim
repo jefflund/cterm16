@@ -10,11 +10,11 @@ let g:ct16_5 = 188 " default foreground
 let g:ct16_6 = 254 " rare foreground
 let g:ct16_7 = 231 " rare background
 let g:ct16_8 = 131 " variables
-let g:ct16_9 = 173 " literals
+let g:ct16_9 = 172 " literals
 let g:ct16_A = 222 " classes
-let g:ct16_B = 143 " strings
-let g:ct16_C = 109 " escapes
-let g:ct16_D = 108 " functions
+let g:ct16_B = 107 " strings
+let g:ct16_C = 73  " escapes
+let g:ct16_D = 109 " functions
 let g:ct16_E = 139 " keywords
-let g:ct16_F = 131 " delimiters
+let g:ct16_F = 130 " delimiters
 call CTerm16Apply("default")
