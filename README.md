@@ -39,3 +39,53 @@ the differences:
 * Only sets cterm attributes. Doesn't bother with gui attributes.
 * Uses xterm-256color codes. Doesn't override your shell's system colors.
 * Just a Vim colorscheme. Doesn't do anything else.
+
+## Colorschemes
+
+Who are we kidding? You don't care about the how, you just want to know if the
+included colorschemes are any good. Judge for yourself:
+
+### cterm16-aurora
+![Example of cterm16-aurora colorscheme](/demo/aurora.png)
+
+### cterm16-borealis
+![Example of cterm16-borealis colorscheme](/demo/borealis.png)
+
+### cterm16-carmilla
+![Example of cterm16-carmilla colorscheme](/demo/carmilla.png)
+
+### cterm16-foundry
+![Example of cterm16-foundry colorscheme](/demo/foundry.png)
+
+### cterm16-hacker
+![Example of cterm16-hacker colorscheme](/demo/hacker.png)
+
+### cterm16-latern
+![Example of cterm16-latern colorscheme](/demo/lantern.png)
+
+### cterm16-lucid
+![Example of cterm16-lucid colorscheme](/demo/lucid.png)
+
+### cterm16-magnum
+![Example of cterm16-magnum colorscheme](/demo/magnum.png)
+
+### cterm16-mint
+![Example of cterm16-mint colorscheme](/demo/mint.png)
+
+### cterm16-nyx
+![Example of cterm16-nyx colorscheme](/demo/nyx.png)
+
+### cterm16-polar
+![Example of cterm16-polar colorscheme](/demo/polar.png)
+
+### cterm16-snoke
+![Example of cterm16-snoke colorscheme](/demo/smoke.png)
+
+### cterm16-twilight
+![Example of cterm16-twilight colorscheme](/demo/twilight.png)
+
+### cterm16-vintage
+![Example of cterm16-vintage colorscheme](/demo/vintage.png)
+
+### cterm16-wintertide
+![Example of cterm16-wintertide colorscheme](/demo/wintertide.png)
