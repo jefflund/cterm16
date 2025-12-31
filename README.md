@@ -32,6 +32,7 @@ something like this to your vimrc:
 augroup custom_colorscheme
     autocmd!
     autocmd ColorScheme * call CTerm16Highlight("MatchParen", "", g:ct16_5, "")
+augroup END
 ```
 
 In case you're wondering why you'd use this instead of base16 itself, here are
