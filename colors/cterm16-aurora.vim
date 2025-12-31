@@ -16,5 +16,5 @@ let g:ct16_B = 65  " strings, inherited class, diff inserted
 let g:ct16_C = 108 " support, regex, escape characters, markup quotes
 let g:ct16_D = 22  " functions, methods, headings
 let g:ct16_E = 37  " keywords, selector, markup italic, diff changed
-let g:ct16_F = 216 " deprecated, embedding language tags
+let g:ct16_F = 96  " deprecated, embedding language tags
 call CTerm16Apply("aurora")
