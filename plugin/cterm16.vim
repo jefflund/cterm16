@@ -20,16 +20,36 @@ let g:ct16_D = 2  " functions, methods, headings
 let g:ct16_E = 5  " keywords, selector, markup italic, diff changed
 let g:ct16_F = 3  " deprecated, embedding language tags
 
-function! CTerm16CycleNext()
-    let l:colors = getcompletion('', 'color')
+function! s:CTerm16GetThemes(cterm_only)
+    let l:all_colors = getcompletion('', 'color')
+    if a:cterm_only == 0
+        return l:all_colors
+    endif
+    let l:colors = []
+    for l:color in l:all_colors
+        if l:color =~ '^cterm16-'
+            call add(l:colors, l:color)
+        endif
+    endfor
+    return l:colors
+endfunction
+
+function! CTerm16CycleNext(cterm_only = 1)
+    let l:colors = s:CTerm16GetThemes(a:cterm_only)
+    if empty(l:colors)
+        return
+    endif
     let l:idx = index(l:colors, g:colors_name) + 1
     exe 'colorscheme ' .. l:colors[l:idx < len(l:colors) ? l:idx : 0]
 endfunction
 
-function! CTerm16CyclePrev()
-    let l:colors = getcompletion('', 'color')
+function! CTerm16CyclePrev(cterm_only = 1)
+    let l:colors = s:CTerm16GetThemes(a:cterm_only)
+    if empty(l:colors)
+        return
+    endif
     let l:idx = index(l:colors, g:colors_name) - 1
-    exe 'colorscheme ' .. l:colors[l:idx < 0 ? -1 : l:idx]
+    exe 'colorscheme ' .. l:colors[l:idx < 0 ? len(l:colors) - 1 : l:idx]
 endfunction
 
 function! CTerm16Highlight(group, fg, bg, attr)
