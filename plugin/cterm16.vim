@@ -176,6 +176,7 @@ function! CTerm16Apply(name = "")
     call CTerm16Highlight("htmlItalic", g:ct16_E, "", "")
     call CTerm16Highlight("htmlEndTag", g:ct16_5, "", "")
     call CTerm16Highlight("htmlTag",    g:ct16_5, "", "")
+    call CTerm16Highlight("htmlStrike", g:ct16_8, "", "")
     " JavaScript highlighting
     call CTerm16Highlight("javaScript",          g:ct16_5, "", "")
     call CTerm16Highlight("javaScriptBraces",    g:ct16_5, "", "")
